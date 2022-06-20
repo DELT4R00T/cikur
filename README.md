@@ -14,4 +14,4 @@ Lalu clone repo dan install, gunakan:
 git clone https://github.com/arzxh/konz/ && cd konz && npm i && npm start
 ```
 # Support me
-<a href="https://trakteer.id">Trakteer</a>
+<a href="https://trakteer.id/arzhavz">Trakteer</a>
