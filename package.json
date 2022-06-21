@@ -1,5 +1,5 @@
 {
-  "name": "KONZ",
+  "name": "KYZ",
   "version": "0.0.3a",
   "description": "Simple web downloader",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "Sandy Pratama",
+  "author": "Iky Apake",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.7",
