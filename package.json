@@ -1,6 +1,6 @@
 {
   "name": "KYZ",
-  "version": "0.0.3a",
+  "version": "0.0.3c",
   "description": "Simple web downloader",
   "main": "index.js",
   "scripts": {
