@@ -126,25 +126,19 @@
             </form>
         </div>
         
-    <div class="container konz-container">
-            <div class="konz-col">
-                <div class="konz-content">
-                    <h5>Tentang</h5>
-                    <p>Versi: "^0.0.3-c"<br>GitHub: <a href="ikymyselff.herokuapp.com" target="_blank" class="konz-url">ikymyselff.herokuapp.com</a></p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="jumbotron text-center konz-footer">
+        <div class="jumbotron text-center footer" style="margin-top:50px;box-shadow: 0px 0px 5px black;margin-bottom:0">
             <br>
-            <p>&copy; Iky Apake 2020</p>
+            <p>&copy; 2022 Iky Apake</p>
             <br>
         </div>
         
         <script>
+        var say = ["Halo cuy", "Assalamualaikum bro", "Hai banh", "P", "Halo bang", "Apa kabar?"]
+        var konz = say[Math.floor(Math.random() * say.length)]
+            alert(konz);
             f.addEventListener('submit', submitted);
             function validate() {
-                var x = document.forms["form"]["on_query"].value;
+                var x = document.forms["query"]["q"].value;
                 var url = /https?:\/\//.test(x);
                 if (x == "") {
                     alert("Query tidak boleh kosong!");
@@ -155,6 +149,13 @@
                         return false;
                     }
                 }
+            }
+            window.setTimeout("waktu()", 1000);
+            function waktu() {
+                var waktu = new Date();
+                setTimeout("waktu()", 1000);
+                var jam = `${waktu.getHours() < 10 ? "0" + waktu.getHours() : waktu.getHours()}:${waktu.getMinutes() < 10 ? "0" + waktu.getMinutes() : waktu.getMinutes()}:${waktu.getSeconds() < 10 ? "0" + waktu.getSeconds() : waktu.getSeconds()}`
+                document.getElementById("waktu").innerHTML = `<p>${jam} WIB</p>`;
             }
         </script>
     </body>
