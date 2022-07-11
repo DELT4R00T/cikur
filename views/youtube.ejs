@@ -125,6 +125,40 @@
             </button>
             </form>
         </div>
+        <div id="alert" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+                <div class="modal-content">
+                    <div class="modal-header justify-content-center">
+                        <div class="icon-box">
+                            <i class="material-icons">&#xE5CD;</i>
+                        </div>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <h5>Invalid URL!</h5>
+                        <button class="btn btn-success" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="welcome" class="modal fade">
+            <div class="modal-dialog modal-confirm">
+                <div class="ayang">
+                    <img src="https://i.ibb.co/xjMncNH/gura.png" height="100px" width="auto">
+                </div>
+                <div class="modal-content" style="background-color: #cfd5ff">
+                    <div class="modal-header2 justify-content-center">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <h5>Apa kabar?</h5>
+                        <a class="btn2 btn-success" role="button" style="float: left;" href="https://saweria.co/ikyapake" target="_blank">Donate</a>
+                        <button class="btn2 btn-success" data-dismiss="modal" style="float: right;">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div class="jumbotron text-center footer" style="margin-top:50px;box-shadow: 0px 0px 5px black;margin-bottom:0">
             <br>
@@ -133,30 +167,23 @@
         </div>
         
         <script>
-        var say = ["Halo cuy", "Assalamualaikum bro", "Hai banh", "P", "Halo bang", "Apa kabar?"]
-        var konz = say[Math.floor(Math.random() * say.length)]
-            alert(konz);
             f.addEventListener('submit', submitted);
             function validate() {
-                var x = document.forms["query"]["q"].value;
+                var x = document.forms["form"]["on_query"].value;
                 var url = /https?:\/\//.test(x);
                 if (x == "") {
-                    alert("Query tidak boleh kosong!");
+                    $("#alert").modal("show");
                     return false;
                 } else if (url) {
                     if (!/(youtube.com|youtu.be)/.test(x)) {
-                        alert("Invalid URL!");
+                        $("#alert").modal("show");
                         return false;
                     }
                 }
             }
-            window.setTimeout("waktu()", 1000);
-            function waktu() {
-                var waktu = new Date();
-                setTimeout("waktu()", 1000);
-                var jam = `${waktu.getHours() < 10 ? "0" + waktu.getHours() : waktu.getHours()}:${waktu.getMinutes() < 10 ? "0" + waktu.getMinutes() : waktu.getMinutes()}:${waktu.getSeconds() < 10 ? "0" + waktu.getSeconds() : waktu.getSeconds()}`
-                document.getElementById("waktu").innerHTML = `<p>${jam} WIB</p>`;
-            }
+            function welcome() {
+                $("#welcome").modal("show");
+            };
         </script>
     </body>
 </html>
